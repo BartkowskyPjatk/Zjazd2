@@ -18,17 +18,19 @@ public class StudentGroup {
         if (Group.studentList.size() <= 0) throw new IllegalArgumentException("grupa ma 0 czlonkow");
         Group.studentList.remove(pajac);
         System.out.println("Usunieto studenta " + pajac.fname +" "+ pajac.lname +" s"+pajac.indexNumber + " z grupy "+ Group.name );
-        System.out.println();
     }
     public void soutStudentList(StudentGroup Group){
+        System.out.println();
         for(Student studencik : Group.studentList){
-            System.out.println("Imię : "+studencik.fname + " Nazwisko: "/* + studencik.lname + " NumerIndexu: " + studencik.indexNumber + " e-mail: " + studencik.email
-                    + " adres : " + studencik.address + " oceny: "*/); soutStudentGrades(studencik.grades);
+            System.out.println("Imię : "+studencik.fname + " Nazwisko: " + studencik.lname + " NumerIndexu: " + studencik.indexNumber + " e-mail: " + studencik.email
+                    + " adres : " + studencik.address + " oceny: ");
+            soutStudentGrades(studencik.grades);
+            System.out.println();
         }
     }
     public void soutStudentGrades(ArrayList<Integer> grades){
         for (int grade : grades) {
-            System.out.print(grade);
+            System.out.print(grade + " ");
         }
     }
 }
